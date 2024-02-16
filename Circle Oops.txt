@@ -8,7 +8,7 @@ class Circle{
     this.rad=r;
   }
   void print(){
-    System.out.println("Radius of the circle is "+(int)n);
+    System.out.println("Radius of the circle is "+(int)rad);
     System.out.println("The area of the circle is "+Math.PI*rad*rad);
     System.out.println("The circumference of the circle is "+2*Math.PI*rad);
   }
