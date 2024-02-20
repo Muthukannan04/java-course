@@ -1,60 +1,58 @@
-
 import java.util.*;
+class Person{
+  protected String firstName;
+  String lastName;
+  int id,a[],avg,n,sum;
+  char g;
+  Person(String firstName, String lastName, int identification){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.id = identification;
+  }
+  void setdata(int a[],int n){
+    this.a = a;
+    this.n = n;
+  }
+  String getdata(){
+    return firstName;
+  }
+  void print(){
+    for(int i=0;i<n;i++){
+    this.sum += a[i];
+    }
+    avg = sum/n;
+    if(avg>=90 && avg<=100)
+      g = 'O';
+    else if(avg>=80 && avg<90)
+      g = 'E';
+    else if(avg>=70 && avg<80)
+      g = 'A';
+    else if(avg>=55 && avg<70)
+      g = 'P';
+    else if(avg>=40 && avg<55)
+      g = 'D';
+    else 
+      g = 'T';
+    System.out.println("Name: "+lastName+" "+getdata());
+    System.out.println("ID: "+id+"\nGrade: "+g);
+}
+}
 class Main{
   public static void main(String[] args){
-    int n,i,r,m1,m2,m3,m4,m5,max1=0,max2=0,max3=0,max=0,r1=0,r2=0,r3=0,r4=0;
-    Scanner sc=new Scanner(System.in);
-    n=sc.nextInt();
-    Student[] s=new Student[n];
-    for(i=0;i<n;i++)
-      {
-        r=sc.nextInt();
-        m1=sc.nextInt();
-        m2=sc.nextInt();
-        m3=sc.nextInt();
-        
-        s[i]=new Student(m2,m3,r);
-        s[i].setMark1(m1);
-      }
-    for(i=0;i<n;i++)
-      s[i].Print();
-    for(i=0;i<n;i++){
-      if(max1<s[i].mark1){
-        max1=s[i].mark1;
-      r1=s[i].roll;
-      }
-      if(max2<s[i].mark2){
-        r2=s[i].roll;
-        max2=s[i].mark2;
-      }
-      if(max3<s[i].mark3){
-        r3=s[i].roll;
-        max3=s[i].mark3;
-      }
-      if(max<s[i].max){
-        r4=s[i].roll;
-        max=s[i].max;
-      }
+    String fname,sname;
+    int id,n,a[];
+    Scanner sc = new Scanner(System.in);
+    fname = sc.nextLine();
+    sname = sc.nextLine();
+    id = sc.nextInt();
+    n = sc.nextInt();
+    a = new int[n];
+    for(int i=0;i<n;i++){
+      a[i] = sc.nextInt();
     }
-    System.out.println(r1+" "+max1+"\n"+r2+" "+max2+"\n"+r3+" "+max3+"\n"+r4+" "+max);
-    
+    Person p = new Person(fname,sname,id);
+    p.setdata(a,n);
+    p.print();
   }
 }
-class Student{
-  int mark1,mark2,mark3,mark4,mark5,roll,max;
-  Student(int m2,int m3,int r){
-    this.mark2=m2;
-    this.mark3=m3;
-    
-    this.roll=r;
-  }
-  public void setMark1(int m1) 
-  { 
-    this.mark1 = m1; 
-  }
- public void Print(){
-   max=mark1+mark2+mark3;
-   System.out.println(mark1+mark2+mark3);
- }
 
-}
