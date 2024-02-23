@@ -68,6 +68,19 @@ void dellast(){
             temp.next=null;
     }
 }
+
+// BACKWARD
+
+void printbw(){
+    Node temp=head;
+    while(temp.next!=null){
+        temp=temp.next;
+    }
+    while(temp!=null){
+        System.out.println(temp.data);
+        temp=temp.prev;
+    }
+}
     // PRINT 
     void print(){
         Node temp=head;
@@ -80,14 +93,15 @@ void dellast(){
 public class Main{
     public static void main(String[] args){
         LinkedList l1=new LinkedList();
-        //l1.addfirst(50);
-        //l1.addfirst(70);
-        l1.addlast(10);
-        l1.addlast(20);
-        l1.addlast(30);
+        l1.addfirst(50);
+        l1.addfirst(70);
+        // l1.addlast(10);
+        // l1.addlast(20);
+        // l1.addlast(30);
        // l1.delfirst();
-        l1.dellast();
+        //l1.dellast();
        // l1.delfirst();
+       l1.printbw();
         l1.print();
     }
 }
